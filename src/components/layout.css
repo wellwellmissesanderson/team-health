@@ -620,3 +620,10 @@ pre tt:after {
     font-size: 100%;
   }
 }
+.muted {
+  color: rgb(135, 135, 135);
+}
+.chart {
+  margin: 50px auto;
+  padding: 10px;
+}
