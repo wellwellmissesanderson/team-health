@@ -644,14 +644,16 @@ pre tt:after {
 }
 main {
   max-width: 960px;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 header {
   background: rebeccapurple;
   width: 100%;
   position: fixed;
   top: 0;
+  height: 120px;
 }
+header a {  color: white; }
 footer {
   width: 100%;
   position: fixed;

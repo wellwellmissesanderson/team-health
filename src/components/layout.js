@@ -1,14 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { TransitionPortal } from "gatsby-plugin-transition-link";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import Header from "./header"
 import "./layout.css"
@@ -26,23 +20,36 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={`${data.site.siteMetadata.title} 🤟`}/>
+      <TransitionPortal>
+          <Header siteTitle={`${data.site.siteMetadata.title} 🤟`}/>
+      </TransitionPortal>
       <div className="wrapper">
+
         <main>
           {children}
         </main>
       </div>
 
-      <footer>
+      <TransitionPortal>
+        <footer>
           <div className="links">
-            <Link className="link" to="/question-1">one</Link>
-            <Link className="link" to="/question-1">one</Link>
-            <Link className="link" to="/question-1">one</Link>
-            <Link className="link" to="/question-1">one</Link>
-            <Link className="link" to="/question-1">one</Link>
-            <Link className="link" to="/question-1">one</Link>
+
+            <AniLink
+              className="link"
+              swipe
+              direction="down"
+              entryOffset={200}
+              to="/question-1">
+                Q1
+              </AniLink>
+            <AniLink className="link" swipe direction="up" entryOffset={200} to="/question-2">Q2</AniLink>
+            <Link className="link" to="/question-1">Q3</Link>
+            <Link className="link" to="/question-1">Q4</Link>
+            <Link className="link" to="/question-1">Q5</Link>
+            <Link className="link" to="/question-1">Q6</Link>
           </div>
         </footer>
+      </TransitionPortal>
     </>
   )
 }

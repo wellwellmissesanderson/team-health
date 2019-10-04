@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-
 import { graphql } from "gatsby"
 import { CategoriesChart } from '../components/categories-chart';
 import Layout from "../components/layout"
 import DataHelpers from '../helpers/data';
 
-export const SecondPage = ({ data }) => {
+export const QuestionOne = ({ data }) => {
   const GQL_NODE_PATH = data.allQuestiononeCsv.edges;
   const [categories, setCategories] = useState({});
 
   useEffect(() => {
-    DataHelpers.getCategories(GQL_NODE_PATH)
+    DataHelpers.getCategories(GQL_NODE_PATH, 'field2')
       .then(res => setCategories(res));
   }, [GQL_NODE_PATH]);
 
@@ -30,15 +28,15 @@ export const SecondPage = ({ data }) => {
   );
 }
 
-export default SecondPage
+export default QuestionOne;
 
 export const IndexQuery = graphql`
     query {
         allQuestiononeCsv {
-        edges {
-            node {
-                field2
-            }
-        }
+          edges {
+              node {
+                  field2
+              }
+          }
       }
   }`

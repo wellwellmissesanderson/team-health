@@ -6,6 +6,7 @@ module.exports = {
     author: `Heather Anderson`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,7 +33,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `questionone`,
-        path: `${__dirname}/src/data/questions/csv`,
+        path: `${__dirname}/src/data/questions/one`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questiontwo`,
+        path: `${__dirname}/src/data/questions/two`,
       },
     },
     {
