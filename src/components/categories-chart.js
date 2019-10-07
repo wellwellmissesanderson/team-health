@@ -2,7 +2,9 @@ import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import BG_COLOURS, { darken } from '../helpers/palette';
 
-export const CategoriesChart = ({ categories }) => {
+export const CategoriesChart = (props) => {
+    const { categories, ...other } = props;
+
     const instances = [];
     const tags = [];
 
@@ -18,7 +20,7 @@ export const CategoriesChart = ({ categories }) => {
         },
     }
 
-    const nuData = {
+    const chartData = {
         labels: tags,
         datasets: [{
             data: instances,
@@ -28,15 +30,13 @@ export const CategoriesChart = ({ categories }) => {
     };
 
     return (
-        <div className="chart">
-            <Pie data={nuData} legend={legendOptions} className="chart" />
-        </div>
+        <Pie data={chartData} legend={legendOptions} className="chart" {...other} />
     );
 }
 
 export default CategoriesChart;
 
-// Need to setup <StaticQuery> to do this here.
+// Would need to setup <StaticQuery> to do this here.
 // https://www.gatsbyjs.org/docs/static-query/
 // export const IndexQuery = graphql`
 //     query {

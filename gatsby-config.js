@@ -29,7 +29,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
+    { // todo: how to avoid listing individually here
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `questionone`,
@@ -41,6 +41,97 @@ module.exports = {
       options: {
         name: `questiontwo`,
         path: `${__dirname}/src/data/questions/two`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionthree`,
+        path: `${__dirname}/src/data/questions/three`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionfour`,
+        path: `${__dirname}/src/data/questions/four`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionfive`,
+        path: `${__dirname}/src/data/questions/five`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionsix`,
+        path: `${__dirname}/src/data/questions/six`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionseven`,
+        path: `${__dirname}/src/data/questions/seven`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questioneight`,
+        path: `${__dirname}/src/data/questions/eight`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionnine`,
+        path: `${__dirname}/src/data/questions/nine`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionten`,
+        path: `${__dirname}/src/data/questions/ten`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questioneleven`,
+        path: `${__dirname}/src/data/questions/eleven`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questiontwelve`,
+        path: `${__dirname}/src/data/questions/twelve`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionthirteen`,
+        path: `${__dirname}/src/data/questions/thirteen`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionfourteen`,
+        path: `${__dirname}/src/data/questions/fourteen`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `questionfifteen`,
+        path: `${__dirname}/src/data/questions/fifteen`,
       },
     },
     {

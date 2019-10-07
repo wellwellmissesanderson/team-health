@@ -7,7 +7,7 @@ const BG_COLOURS = [
     '#5C6BC0',
     // '#42A5F5',
     '#29B6F6',
-    '#26C6DA',
+    '#D4E157',
     '#26A69A',
     // '#66BB6A',
     '#9CCC65',
@@ -32,7 +32,7 @@ const colorLuminance = (hex, lum) => {
 	lum = lum || 0;
 
 	// convert to decimal and change luminosity
-	var rgb = "#", c, i;
+	let rgb = "#", c, i;
 	for (i = 0; i < 3; i++) {
 		c = parseInt(hex.substr(i*2,2), 16);
 		c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);

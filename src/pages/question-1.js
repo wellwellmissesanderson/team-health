@@ -4,39 +4,39 @@ import { CategoriesChart } from '../components/categories-chart';
 import Layout from "../components/layout"
 import DataHelpers from '../helpers/data';
 
-export const QuestionOne = ({ data }) => {
-  const GQL_NODE_PATH = data.allQuestiononeCsv.edges;
-  const [categories, setCategories] = useState({});
+export const QuestionTwo = ({ data }) => {
+    const GQL_NODE_PATH = data.allQuestionthreeCsv.edges;
+    const [categories, setCategories] = useState({});
 
-  useEffect(() => {
-    DataHelpers.getCategories(GQL_NODE_PATH, 'field2')
-      .then(res => setCategories(res));
-  }, [GQL_NODE_PATH]);
+    useEffect(() => {
+        DataHelpers.formatForCategoryChart(GQL_NODE_PATH)
+            .then(res => setCategories(res));
+    }, [GQL_NODE_PATH]);
 
-  return (
+    return (
     <Layout>
 
-      <h4>If you've ever been on a truly great team (sports, volunteering, work, other), what specifically made it that way?</h4>
-      <hr></hr>
-      <h5 className="muted">The long-form responses were tagged into {categories.length} categories</h5>
+        <h4>Based on this definition of 'great', has your perception of your squad being great gotten better/worse in the last 3 months?</h4>
+        <hr></hr>
 
-      <CategoriesChart categories={categories} />
+        <div className="chart">
+            <CategoriesChart categories={categories} />
+        </div>
 
-      <hr></hr>
-      {/* <Link to="/">Go back to the homepage</Link> */}
+        <hr></hr>
     </Layout>
-  );
+    );
 }
 
-export default QuestionOne;
+export default QuestionTwo;
 
-export const IndexQuery = graphql`
+export const QuestionTwoQuery = graphql`
     query {
-        allQuestiononeCsv {
-          edges {
-              node {
-                  field2
-              }
-          }
-      }
-  }`
+        allQuestionthreeCsv {
+            edges {
+                node {
+                    field1
+                }
+            }
+        }
+    }`
